@@ -17,7 +17,7 @@ view: ga_sessions {
   extends: [ga_sessions_base]
   # The SQL_TABLE_NAME must be replaced here for date partitioned queries to work properly.
 
-  sql_table_name: `ga360.ga_sessions_*` ;;
+  sql_table_name: `1886338.ga_sessions_*` ;;
 
   dimension: block_name {
     type: string
@@ -31,18 +31,30 @@ view: ga_sessions {
 
   # If you have custom dimensions on sessions, declare them here.
 
-  # dimension: custom_dimension_2 {
-  #   sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=2) ;;
-  # }
+  dimension: vuid {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=4) ;;
+  }
 
+  dimension: user_status {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=1) ;;
+  }
 
-  # dimension: custom_dimension_2 {
-  #   sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=2) ;;
-  # }
+  dimension: user_type {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=2) ;;
+  }
 
-  # dimension: custom_dimension_3 {
-  #   sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=3) ;;
-  # }
+  dimension: page_type {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=8) ;;
+  }
+
+  dimension: man_in_the_mirror {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=10) ;;
+  }
+
+  dimension: user_id {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=14) ;;
+  }
+
 }
 
 view: geoNetwork {
