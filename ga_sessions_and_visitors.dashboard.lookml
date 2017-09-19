@@ -14,7 +14,7 @@
   - name: total_hits
     title: Total Hits
     type: single_value
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     measures: [totals.hits_total, ga_sessions.session_count, ga_sessions.unique_visitors,
       totals.timeonsite_average_per_session]

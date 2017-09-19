@@ -16,7 +16,7 @@
     - name: total_visitors
       title: Total Visitors
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [ga_sessions.total_visitors]
       listen:

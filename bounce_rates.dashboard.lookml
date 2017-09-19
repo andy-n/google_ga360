@@ -15,7 +15,7 @@
     - name: average_sessions_per_visitor
       title: Average Sessions per Visitor
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [ga_sessions.average_sessions_ver_visitor]
       listen:
