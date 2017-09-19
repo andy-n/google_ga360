@@ -7,5 +7,6 @@ include: "*.view"
 include: "*.dashboard"
 
 explore: ga_sessions {
+  label: "Google Analytics Sessions"
   extends: [ga_sessions_block]
 }
