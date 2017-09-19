@@ -58,7 +58,7 @@
     - name: unique_visitors
       title: Unique Visitors
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [ga_sessions.unique_visitors]
       listen:
@@ -100,7 +100,7 @@
     - name: first_time_visitors
       title: First Time Visitors
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [ga_sessions.first_time_visitors]
       listen:
@@ -142,7 +142,7 @@
     - name: returning_visitors
       title: Returning Visitors
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [ga_sessions.returning_visitors]
       listen:
@@ -184,7 +184,7 @@
     - name: total_sessions
       title: Total Sessions
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [ga_sessions.session_count]
       listen:
@@ -226,7 +226,7 @@
     - name: average_sessions_per_visitor
       title: Average Sessions per Visitor
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [ga_sessions.average_sessions_ver_visitor]
       listen:
@@ -268,7 +268,7 @@
     - name: page_views_per_session
       title: Average Page Views per Session
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [totals.page_views_session]
       listen:
@@ -310,7 +310,7 @@
     - name: average_time_on_site_per_session
       title: Average Session Length
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [totals.timeonsite_average_per_session]
       listen:
@@ -352,7 +352,7 @@
     - name: conversion_funnel_by_source
       title: Conversion Funnel by Source
       type: looker_column
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [trafficSource.source]
       measures: [totals.hits_total, totals.pageviews_total, totals.transactions_count]
@@ -393,7 +393,7 @@
     - name: conversion_funnel_by_keyword
       title: Conversion Funnel by Keyword
       type: looker_column
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [trafficSource.keyword]
       measures: [totals.hits_total, totals.pageviews_total, totals.transactions_count]
@@ -437,7 +437,7 @@
     - name: engagement_by_source
       title: Engagement by Traffic Source
       type: looker_column
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [trafficSource.source]
       measures: [totals.hits_average_per_session, totals.page_views_session, totals.timeonsite_average_per_session,
@@ -503,7 +503,7 @@
     - name: revenue_by_source
       title: Revenue by Source
       type: looker_column
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [trafficSource.source]
       measures: [totals.pageviews_total, totals.transactions_count, totals.transactionRevenue_total]
@@ -575,7 +575,7 @@
     - name: engagement_by_keyword
       title: Engagement by Keyword Search
       type: looker_column
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [trafficSource.keyword]
       measures: [totals.hits_average_per_session, totals.page_views_session, totals.timeonsite_average_per_session,
@@ -643,7 +643,7 @@
     - name: revenue_by_keyword
       title: Revenue by Keyword
       type: looker_column
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [trafficSource.keyword]
       measures: [totals.pageviews_total, totals.transactions_count, totals.transactionRevenue_total]
@@ -716,7 +716,7 @@
     - name: traffic_source_full_detail
       title: Traffic Source Full Detail
       type: table
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [trafficSource.source]
       measures: [ga_sessions.session_count, totals.visits_total, ga_sessions.returning_visitors,
@@ -766,7 +766,7 @@
     - name: keyword_full_detail
       title: Keyword Full Detail
       type: table
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [trafficSource.keyword]
       measures: [ga_sessions.session_count, totals.visits_total, ga_sessions.returning_visitors,

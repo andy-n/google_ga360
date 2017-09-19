@@ -60,7 +60,7 @@
     - name: unique_visitors
       title: Unique Visitors
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [ga_sessions.unique_visitors]
       listen:
@@ -102,7 +102,7 @@
     - name: total_session
       title: Total Sessions
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [ga_sessions.session_count]
       listen:
@@ -144,7 +144,7 @@
     - name: total_bounces
       title: Total Bounces
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [totals.bounces_total]
       listen:
@@ -189,7 +189,7 @@
     - name: average_bounce_rate
       title: Average Bounce Rate
       type: single_value
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       measures: [totals.bounce_rate]
       listen:
@@ -233,7 +233,7 @@
     - name: bounce_rates_over_time
       title: Bounce Rates Over Time
       type: looker_area
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [ga_sessions.partition_date]
       measures: [totals.bounce_rate]
@@ -277,7 +277,7 @@
     - name: bounce_rates_by_channel
       title: Bounces by Channel
       type: looker_column
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [ga_sessions.channelGrouping]
       measures: [totals.bounce_rate, totals.bounces_total]
@@ -318,7 +318,7 @@
     - name: bounces_by_browser
       title: Bounces by Browser
       type: looker_column
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [device.browser]
       measures: [totals.bounces_total, totals.bounce_rate]
@@ -361,7 +361,7 @@
     - name: bounces_by_visitors
       title: Bounces by Visitor Frequency
       type: looker_column
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [ga_sessions.visitnumbertier]
       measures: [totals.bounce_rate, totals.bounces_total]
@@ -402,7 +402,7 @@
     - name: new_vs_returning_users
       title: New vs. Returning User Sessions
       type: looker_area
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [ga_sessions.partition_date]
       measures: [ga_sessions.returning_visitors, ga_sessions.unique_visitors]
@@ -451,7 +451,7 @@
     - name: new_vs_returning_bounce_rates_over_time
       title: New vs Returning User Bounce Rates Over Time
       type: looker_line
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [ga_sessions.first_time_visitor, ga_sessions.partition_date]
       pivots: [ga_sessions.first_time_visitor]
@@ -497,7 +497,7 @@
     - name: new_vs_returning_bounce_totals
       title: New vs Returning Bounce Totals
       type: looker_pie
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [ga_sessions.first_time_visitor]
       fill_fields: [ga_sessions.first_time_visitor]
@@ -544,7 +544,7 @@
     - name: top_performing_article_full_detail
       title: Top Performing Articles (Full Detail)
       type: table
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [hits_page.pageTitle]
       measures: [ga_sessions.session_count, totals.bounces_total, totals.bounce_rate,
@@ -591,7 +591,7 @@
     - name: top_performing_ads
       title: Top Performing Articles
       type: looker_bar
-      model: bq_connectors_ga360
+      model: bigquery
       explore: ga_sessions
       dimensions: [hits_page.pageTitle]
       measures: [totals.bounce_rate, ga_sessions.session_count]

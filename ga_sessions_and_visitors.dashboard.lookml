@@ -60,7 +60,7 @@
   - name: total_sessions
     title: Total Sessions
     type: single_value
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     measures: [totals.hits_total, ga_sessions.session_count, ga_sessions.unique_visitors,
       totals.timeonsite_average_per_session]
@@ -106,7 +106,7 @@
   - name: unique_visitors
     title: Unique Visitors
     type: single_value
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     measures: [totals.hits_total, ga_sessions.session_count, ga_sessions.unique_visitors,
       totals.timeonsite_average_per_session]
@@ -151,7 +151,7 @@
   - name: avg_time_per_session
     title: Average Seconds on Site per Session
     type: single_value
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     measures: [totals.hits_total, ga_sessions.session_count, ga_sessions.unique_visitors,
       totals.timeonsite_average_per_session]
@@ -196,7 +196,7 @@
   - name: stats_7_days
     title: Stats for Last 7 Days
     type: looker_line
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     dimensions: [ga_sessions.partition_date]
     measures: [totals.hits_total, ga_sessions.session_count, ga_sessions.unique_visitors,
@@ -287,7 +287,7 @@
   - name: session_map
     title: Where in the US are Sessions From?
     type: looker_map
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     dimensions: [geoNetwork.location]
     measures: [ga_sessions.session_count]
@@ -358,7 +358,7 @@
   - name: top_10_pages
     title: Top 10 Pages
     type: table
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     dimensions: [hits_page.pagePath]
     measures: [ga_sessions.session_count, ga_sessions.unique_visitors, totals.newVisits_total,
@@ -403,7 +403,7 @@
   - name: social_users
     title: How do Social Users Consume?
     type: looker_donut_multiples
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     dimensions: [hits_social.socialNetwork, device.operatingSystem]
     pivots: [device.operatingSystem]
@@ -430,7 +430,7 @@
   - name: session_histogram
     title: How Long are Sessions?
     type: looker_bar
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     dimensions: [totals.timeonsite_tier]
     measures: [ga_sessions.session_count]
@@ -469,7 +469,7 @@
   - name: traffic_source
     title: Traffic Sources
     type: table
-    model: bq_connectors_ga360
+    model: bigquery
     explore: ga_sessions
     dimensions: [trafficSource.source]
     measures: [ga_sessions.unique_visitors, totals.timeonsite_average_per_session, ga_sessions.session_count,
